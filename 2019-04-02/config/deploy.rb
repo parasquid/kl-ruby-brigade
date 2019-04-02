@@ -38,3 +38,14 @@ set :deploy_to, "/home/vagrant/hello-app"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    on roles(:app) do
+      execute "sudo systemctl restart hello"
+    end
+  end
+end
+
+after 'deploy:publishing', 'deploy:restart'

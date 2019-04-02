@@ -1,0 +1,13 @@
+[Unit]
+Description=hello service
+
+[Service]
+Type=simple
+User=vagrant
+Group=vagrant
+ExecStart=/vagrant/serve
+Restart=always
+TimeoutSec=10
+
+[Install]
+WantedBy=multi-user.target
