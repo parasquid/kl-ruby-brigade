@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+group = Group.create(name: "group 1")
+t1 = group.templates.create(name: "template 1")
+t2 = group.templates.create(name: "template 2")
+
+group2 = Group.create(name: "group 2")
+t1.groups << group2
+
+a = group.templates.create(name: "assignment 1", type: "Assignment")
