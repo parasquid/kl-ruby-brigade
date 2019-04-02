@@ -1,0 +1,10 @@
+service http-alt
+{
+  socket_type = stream
+  protocol = tcp
+  wait = no
+  user = root
+  server = /vagrant/hello.rb
+  instances = 20
+  port = 8080
+}
